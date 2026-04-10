@@ -1,0 +1,239 @@
+/* ============ THANK YOU PAGE ============ */
+.thankyou-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 120px 24px 80px;
+  background: var(--gradient-hero);
+}
+
+.confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.thankyou-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.ty-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+}
+
+.ty-orb--1 {
+  width: 500px;
+  height: 500px;
+  background: rgba(108, 92, 231, 0.15);
+  top: -100px;
+  left: -100px;
+  animation: float 8s ease-in-out infinite;
+}
+
+.ty-orb--2 {
+  width: 400px;
+  height: 400px;
+  background: rgba(0, 206, 201, 0.1);
+  bottom: -100px;
+  right: -100px;
+  animation: float 10s ease-in-out infinite reverse;
+}
+
+.ty-orb--3 {
+  width: 250px;
+  height: 250px;
+  background: rgba(253, 121, 168, 0.08);
+  top: 50%;
+  left: 60%;
+  animation: float 7s ease-in-out infinite;
+}
+
+.thankyou-content {
+  max-width: 680px;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Checkmark */
+.checkmark-circle {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 32px;
+  animation: scaleIn 0.6s ease forwards;
+}
+
+.checkmark-svg {
+  width: 80px;
+  height: 80px;
+}
+
+.checkmark-ring {
+  stroke: var(--accent);
+  stroke-width: 2;
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  animation: checkmark-ring 0.8s ease-in-out forwards;
+}
+
+.checkmark-check {
+  stroke: var(--accent);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: checkmark-check 0.4s ease-in-out 0.5s forwards;
+}
+
+@keyframes checkmark-ring {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes checkmark-check {
+  to { stroke-dashoffset: 0; }
+}
+
+.ty-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.ty-subtitle {
+  font-size: 1.2rem;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.ty-text {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.ty-text strong {
+  color: var(--text-primary);
+}
+
+/* What Happens Next */
+.ty-what-next {
+  padding: 36px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  margin-bottom: 36px;
+  text-align: left;
+}
+
+.ty-what-next h3 {
+  font-size: 1.2rem;
+  margin-bottom: 24px;
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.ty-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ty-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.ty-step-num {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: white;
+}
+
+.ty-step h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.ty-step p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.ty-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+}
+
+.ty-social p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.ty-social-links {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.ty-social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  transition: var(--transition-base);
+}
+
+.ty-social-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.ty-social-btn:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 600px) {
+  .ty-what-next {
+    padding: 24px 18px;
+  }
+}
